@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!-- lang="he" dir="rtl": the page is in Hebrew and reads from right to left -->
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ספרינט פורטפוליו תקש״ח 2026 – האתר יעלה בקרוב</title>
+
+  <!-- Font: David Libre from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=David+Libre:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- "?v=2" makes the browser load the newest version instead of an old saved copy -->
+  <link rel="stylesheet" href="styles.css?v=2">
+</head>
+<body>
+  <!-- "page--one-screen" stretches the page to fill exactly one screen -->
+  <div class="page page--one-screen page--coming-soon">
+
+    <!-- ===== Top bar (stays at the top when you scroll) ===== -->
+    <!-- No menu links here: the rest of the site is still being built -->
+    <header class="site-header">
+      <div class="site-header__bar">
+        <p class="site-header__title">ספרינט פורטפוליו תקש״ח 2026</p>
+      </div>
+    </header>
+
+    <!-- ===== Big logo ===== -->
+    <div class="hero-logo">
+      <img src="images/coming-soon-logo-circle.svg" width="149.866" height="149.866" alt="">
+      <img src="images/coming-soon-logo-dots.svg" width="150.199" height="150.123" alt="">
+    </div>
+
+    <main class="main">
+      <section class="intro">
+        <div class="intro__content">
+          <h1 class="coming-soon__title">האתר יעלה בעוד</h1>
+
+          <!-- Countdown. The numbers are filled in by countdown.js -->
+          <!-- dir="ltr" keeps the order from Figma: weeks on the left, seconds on the right -->
+          <div class="countdown" dir="ltr" aria-live="off">
+            <div class="countdown__item">
+              <span class="countdown__number" id="countdown-weeks">00</span>
+              <span class="countdown__label">שבועות</span>
+            </div>
+            <span class="countdown__divider" aria-hidden="true"></span>
+            <div class="countdown__item">
+              <span class="countdown__number" id="countdown-days">00</span>
+              <span class="countdown__label">ימים</span>
+            </div>
+            <span class="countdown__divider" aria-hidden="true"></span>
+            <div class="countdown__item">
+              <span class="countdown__number" id="countdown-hours">00</span>
+              <span class="countdown__label">שעות</span>
+            </div>
+            <span class="countdown__divider" aria-hidden="true"></span>
+            <div class="countdown__item">
+              <span class="countdown__number" id="countdown-minutes">00</span>
+              <span class="countdown__label">דקות</span>
+            </div>
+            <span class="countdown__divider" aria-hidden="true"></span>
+            <div class="countdown__item">
+              <span class="countdown__number" id="countdown-seconds">00</span>
+              <span class="countdown__label">שניות</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <!-- English text is wrapped in dir="ltr" so it doesn't get scrambled in a right-to-left page -->
+    <footer class="footer">
+      <div class="footer__content">
+        <div class="footer__logo">
+          <img src="images/coming-soon-logo-footer.svg" width="121.038" height="59.025" alt="Frame & Form">
+        </div>
+
+        <div class="footer__columns">
+          <div class="footer__column">
+            <div class="footer__group">
+              <p>OFFICE</p>
+              <p><span dir="ltr">15 Candyland Lane</span><br><span dir="ltr">28010 San Francisco</span></p>
+            </div>
+            <div class="footer__group">
+              <p>CONTACT</p>
+              <div class="footer__links">
+                <a href="https://figma.com/sites"><span dir="ltr">(646) 555-4567</span></a>
+                <a class="footer__email" href="mailto:talieilon@post.bezalel.ac.il"><span dir="ltr">talieilon@post.bezalel.ac.il</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer__column footer__column--social">
+            <div class="footer__group">
+              <p>SOCIAL</p>
+              <div class="footer__links">
+                <a href="https://www.instagram.com/vc_bezalel" target="_blank">Instagram</a>
+                <a href="https://figma.com/sites" target="_blank">Behance</a>
+                <a href="https://figma.com/sites" target="_blank">Spotify</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Big "Frame & Form" at the bottom -->
+      <div class="footer__wordmark">
+        <img src="images/coming-soon-wordmark.svg" width="1250" height="152.309" alt="Frame & Form">
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="countdown.js"></script>
+</body>
+</html>

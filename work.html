@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frame &amp; Form</title>
+
+  <!-- Font: Instrument Sans from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page">
+
+    <!-- ===== Top bar (stays at the top when you scroll) ===== -->
+    <header class="site-header" id="site-header">
+      <div class="site-header__bar">
+        <a class="site-header__logo" href="index.html" aria-label="Frame & Form, home page">
+          <img src="images/logo-ff.svg" width="37.912" height="16.28" alt="">
+          <!-- Small arrows logo (phones only) -->
+          <span class="site-header__logo-small">
+            <img src="images/logo-left-small.svg" width="15.83" height="15.83" alt="">
+            <img src="images/logo-right-small.svg" width="15.858" height="15.858" alt="">
+          </span>
+        </a>
+
+        <nav class="site-header__nav" aria-label="Main menu">
+          <a class="nav-link" href="work.html" aria-current="page">Work</a>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link nav-link--underlined" href="mailto:talieilon@post.bezalel.ac.il">Contact</a>
+        </nav>
+
+        <!-- Opens the menu on phones (see script.js) -->
+        <button class="menu-button" id="menu-button" type="button" aria-expanded="false">Menu</button>
+      </div>
+    </header>
+
+    <!-- ===== Big logo ===== -->
+    <div class="hero-logo">
+      <img src="images/logo-left-large.svg" width="149.866" height="149.864" alt="">
+      <img src="images/logo-right-large.svg" width="150.123" height="150.123" alt="">
+    </div>
+
+    <main class="main">
+
+      <!-- ===== Intro ===== -->
+      <section class="intro">
+        <div class="intro__content">
+          <h1 class="intro__text">Frame &amp; Form specialize in crafting the visual language of your digital brand.</h1>
+        </div>
+      </section>
+
+      <!-- ===== Our work ===== -->
+      <!-- Each project has a row of images you can scroll sideways -->
+      <section class="work">
+        <h2 class="work__title">Our work</h2>
+
+        <!-- Project 1 -->
+        <article class="project">
+          <div class="project__images" tabindex="0" aria-label="Redo images">
+            <img src="images/redo-1.jpg" alt="Redo logo on a green and yellow gradient background">
+            <img src="images/redo-2.jpg" alt="A smiling man holding a tablet computer">
+            <img src="images/redo-3.jpg" alt="The letters Aa drawn as outlines on a pale green grid">
+          </div>
+          <div class="project__details">
+            <div class="project__title">
+              <span class="project__label">Project</span>
+              <div class="project__names">
+                <h3 class="project__name">Redo</h3>
+                <p class="project__type">Lorem ipsum dolor sit</p>
+              </div>
+            </div>
+            <div class="project__summary">
+              <p>Our redesign of Redo's digital presence focused on a streamlined user interface and a modern visual identity. Through intuitive UX design and a refreshed color palette, we enhanced engagement through brand messaging.</p>
+              <a class="text-link" href="project.html">See Project <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project">
+          <div class="project__images" tabindex="0" aria-label="Titan Energy images">
+            <img src="images/titan-1.jpg" alt="Titan Energy logo in green on a purple background">
+            <img src="images/titan-2.jpg" alt="Titan Energy logo over rows of solar panels at night">
+            <img src="images/titan-3.jpg" alt="Portrait of a man in shadow against a purple background">
+          </div>
+          <div class="project__details">
+            <div class="project__title">
+              <span class="project__label">Project</span>
+              <div class="project__names">
+                <h3 class="project__name">Titan Energy</h3>
+                <p class="project__type">Lorem ipsum dolor sit</p>
+              </div>
+            </div>
+            <div class="project__summary">
+              <p>For Titan's market entry, we developed a comprehensive launch campaign, centered on dynamic motion graphics and compelling brand storytelling. This strategy generated significant market traction.</p>
+              <a class="text-link" href="project.html">See Project <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project">
+          <div class="project__images" tabindex="0" aria-label="Farm Global images">
+            <img src="images/farm-global-1.jpg" alt="Farm Global logo over an aerial photo of a harvester in a field">
+            <img src="images/farm-global-2.jpg" alt="Green poster reading 15M pounds of waste saved">
+            <img src="images/farm-global-3.jpg" alt="Farm Global website reading Healthiest seeds in the world">
+          </div>
+          <div class="project__details">
+            <div class="project__title">
+              <span class="project__label">Project</span>
+              <div class="project__names">
+                <h3 class="project__name">Farm Global</h3>
+                <p class="project__type">Lorem ipsum dolor sit</p>
+              </div>
+            </div>
+            <div class="project__summary">
+              <p>Our website redesign for Farm Global emphasized authentic brand imagery and user-centric design. Professional on-location photography showcased their sustainable practices.</p>
+              <a class="text-link" href="project.html">See Project <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project">
+          <div class="project__images" tabindex="0" aria-label="Anders images">
+            <img src="images/anders-1.jpg" alt="Anders letterhead and business cards">
+            <img src="images/anders-2.jpg" alt="Anders logo above a green armchair by a staircase">
+            <img src="images/anders-3.jpg" alt="3D illustration of a furnished home office">
+          </div>
+          <div class="project__details">
+            <div class="project__title">
+              <span class="project__label">Project</span>
+              <div class="project__names">
+                <h3 class="project__name">Anders</h3>
+                <p class="project__type">Lorem ipsum dolor sit</p>
+              </div>
+            </div>
+            <div class="project__summary">
+              <p>We created a digital catalog, focusing on refined typography and immersive visuals. We elevated the perceived value of Anders' furniture and created a seamless browsing experience.</p>
+              <a class="text-link" href="project.html">See Project <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="project">
+          <div class="project__images" tabindex="0" aria-label="Madame F.C. images">
+            <img src="images/club-1.jpg" alt="Social media post for player Sydney James above a photo of a soccer match">
+            <img src="images/club-2.jpg" alt="Madame F.C. club crest in gold on a dark red background">
+            <img src="images/club-3.jpg" alt="Crowd of fans in red watching a match on an outdoor screen">
+          </div>
+          <div class="project__details">
+            <div class="project__title">
+              <span class="project__label">Project</span>
+              <div class="project__names">
+                <h3 class="project__name">Madame F.C.</h3>
+                <p class="project__type">Lorem ipsum dolor sit</p>
+              </div>
+            </div>
+            <div class="project__summary">
+              <p>We developed a bold brand identity and a dynamic social media campaign. Using striking logo design and engaging motion graphics, we built a strong online community and amplified the club's vibe.</p>
+              <a class="text-link" href="project.html">See Project <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 6 -->
+        <article class="project">
+          <div class="project__images" tabindex="0" aria-label="Véloce images">
+            <img src="images/veloce-1.jpg" alt="Blue-toned poster of founder Mike Vera at work">
+            <img src="images/veloce-2.jpg" alt="Find a brewery sign in a cellar full of barrels">
+            <img src="images/veloce-3.jpg" alt="Véloce logo above a glass with a drink on a blue background">
+          </div>
+          <div class="project__details">
+            <div class="project__title">
+              <span class="project__label">Project</span>
+              <div class="project__names">
+                <h3 class="project__name">Véloce</h3>
+                <p class="project__type">Lorem ipsum dolor sit</p>
+              </div>
+            </div>
+            <div class="project__summary">
+              <p>We developed a cohesive visual strategy for Véloce. Through vibrant color palettes and custom illustrations, the packaging stands out on shelves.</p>
+              <a class="text-link" href="project.html">See Project <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ===== Numbers ===== -->
+      <section class="stats">
+        <div class="stats__content">
+          <div class="stats__intro">
+            <p class="stats__intro-text">Frame &amp; Form craft visual strategies that elevate your brand.</p>
+          </div>
+
+          <div class="stats__list">
+            <div class="stats__items">
+              <div class="stat">
+                <p class="stat__number">1M+</p>
+                <p>Users and visitors interacted with our websites</p>
+              </div>
+              <hr class="divider">
+              <div class="stat">
+                <p class="stat__number">36</p>
+                <p>Active campaigns for multiple companies and brands</p>
+              </div>
+              <hr class="divider">
+              <div class="stat">
+                <p class="stat__number">100+</p>
+                <p>Different clients have sought our expertise</p>
+              </div>
+            </div>
+            <a class="text-link text-link--large" href="about.html">About <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+
+        <!-- Connect with us -->
+        <div class="connect">
+          <hr class="divider">
+          <p class="connect__text">Connect with us to explore your project's potential.</p>
+          <hr class="divider">
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+      <div class="footer__content">
+        <div class="footer__logo">
+          <img src="images/logo-footer.svg" width="121.004" height="59.025" alt="Frame & Form">
+        </div>
+
+        <div class="footer__columns">
+          <div class="footer__column">
+            <div class="footer__group">
+              <p>OFFICE</p>
+              <a href="https://figma.com/sites">15 Candyland Lane<br>28010 San Francisco</a>
+            </div>
+            <div class="footer__group">
+              <p>CONTACT</p>
+              <div class="footer__links">
+                <a href="https://figma.com/sites">(646) 555-4567</a>
+                <a class="footer__email" href="mailto:talieilon@post.bezalel.ac.il">talieilon@post.bezalel.ac.il</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer__column footer__column--social">
+            <div class="footer__group">
+              <p>SOCIAL</p>
+              <div class="footer__links">
+                <a href="https://www.instagram.com/vc_bezalel" target="_blank">Instagram</a>
+                <a href="https://figma.com/sites" target="_blank">Behance</a>
+                <a href="https://figma.com/sites" target="_blank">Spotify</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Big "Frame & Form" – a different file for each screen size -->
+      <picture class="footer__wordmark">
+        <source media="(max-width: 767px)" srcset="images/footer-wordmark-mobile.svg">
+        <source media="(max-width: 1023px)" srcset="images/footer-wordmark-tablet.svg">
+        <img src="images/footer-wordmark-desktop.svg" width="1250" height="152.313" alt="Frame & Form">
+      </picture>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

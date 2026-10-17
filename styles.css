@@ -1,0 +1,674 @@
+/* =========================================================
+   Design tokens (values from the Figma "Styles" frame)
+   Change a value here and it updates everywhere on the site.
+   ========================================================= */
+:root {
+  /* Colors */
+  --color-text: #000000;          /* Paragraph 1 */
+  --color-text-muted: #767676;    /* Paragraph 2 */
+  --color-background: #ffffff;    /* Background */
+  --color-divider: #000000;       /* Divider */
+  --color-divider-light: rgba(0, 0, 0, 0.1); /* thin lines between countdown numbers */
+
+  /* Fonts */
+  --font-family: "Instrument Sans", Arial, sans-serif;
+  --font-family-hebrew: "David Libre", Georgia, serif; /* "Coming soon" page */
+
+  /* Font sizes (Figma text styles) */
+  --font-size-display: 105px;     /* Display 1 */
+  --font-size-h1: 64px;           /* Header 1 */
+  --font-size-h2: 37px;           /* Header 2 */
+  --font-size-h3: 30px;           /* Header 3 */
+  --font-size-h4: 24px;           /* Header 4 */
+  --font-size-large: 20px;        /* Nav Link, Text Link 2 */
+  --font-size-body: 16px;         /* Header 5, Paragraph 2, Text Link */
+
+  /* Letter spacing (Figma uses % of the font size) */
+  --tracking-tight: -0.05em;      /* -5% */
+  --tracking-medium: -0.03em;     /* -3% */
+  --tracking-small: -0.02em;      /* -2% */
+
+  /* Spacing */
+  --space-page: 15px;             /* gap between page edge and content */
+  --space-xs: 4px;
+  --space-s: 10px;
+  --space-m: 20px;
+  --space-l: 30px;
+  --space-xl: 50px;
+
+  /* Sizes */
+  --header-height: 46px;
+  --page-max-width: 1920px;
+}
+
+/* =========================================================
+   Basic reset
+   ========================================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: var(--font-size-body);
+  line-height: 1.1;
+  letter-spacing: var(--tracking-medium);
+}
+
+h1, h2, h3, p {
+  margin: 0;
+  font-weight: 400;
+}
+
+img {
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Wraps the whole page and keeps it centered on very wide screens */
+.page {
+  position: relative;
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+}
+
+/* =========================================================
+   Top bar (logo + links)
+   ========================================================= */
+/* "sticky" keeps the bar at the top of the screen while the page scrolls */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 0 var(--space-page);
+  background: var(--color-background);
+}
+
+.site-header__bar {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Left side: the F&F logo */
+.site-header__logo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--space-s);
+  height: var(--header-height);
+  padding: 12px var(--space-m) var(--space-s) 0;
+  border-bottom: 1px solid var(--color-divider);
+}
+
+/* The small arrows logo is only shown on phones */
+.site-header__logo-small {
+  display: none;
+  position: relative;
+  width: 32.6px;
+  height: 16px;
+}
+
+.site-header__logo-small img:last-child {
+  position: absolute;
+  top: 0;
+  left: 16.69px;
+}
+
+/* Right side: Work / About / Contact */
+.site-header__nav {
+  flex: 1;
+  max-width: 615px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: var(--space-xl);
+  height: var(--header-height);
+  padding: 12px 0 var(--space-s) var(--space-m);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.nav-link {
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid transparent;
+  font-size: var(--font-size-large);
+  line-height: 1;
+  letter-spacing: var(--tracking-tight);
+}
+
+/* Hover state from the Figma "Nav Link" component: a line under the word */
+.nav-link:hover {
+  border-bottom-color: currentColor;
+}
+
+/* "Menu" button, only shown on phones */
+.menu-button {
+  display: none;
+}
+
+/* =========================================================
+   Big logo at the top of the page
+   ========================================================= */
+.hero-logo {
+  display: flex;
+  gap: 8px;
+  padding: 19px var(--space-page) var(--space-s); /* 19px + the 46px bar = 65px from the top, like in Figma */
+}
+
+/* =========================================================
+   Main content
+   ========================================================= */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+}
+
+/* --- Intro sentence --- */
+.intro {
+  padding: var(--space-page) var(--space-page) 0;
+}
+
+/* The line under the sentence goes across the whole page */
+.intro__content {
+  padding: var(--space-s) 0 150px;
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.intro__text {
+  max-width: 820px;
+  font-size: var(--font-size-h1);
+  line-height: 1;
+  letter-spacing: var(--tracking-tight);
+}
+
+/* --- "Our work" list --- */
+.work {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  padding: var(--space-m) var(--space-page);
+}
+
+.work__title {
+  padding-bottom: 133px;
+  font-size: var(--font-size-h4);
+  line-height: 1;
+  letter-spacing: var(--tracking-tight);
+}
+
+/* One project card */
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  padding: 0 var(--space-page) var(--space-xl);
+}
+
+/* Row of 3 images. Images that don't fit can be scrolled sideways. */
+.project__images {
+  display: flex;
+  gap: var(--space-m);
+  overflow-x: auto;
+  scrollbar-width: none; /* hide the scrollbar (Firefox, Chrome) */
+}
+
+.project__images::-webkit-scrollbar {
+  display: none; /* hide the scrollbar (Safari) */
+}
+
+.project__images img {
+  flex-shrink: 0;
+  width: 461.25px;
+  height: 446px;
+  object-fit: cover;
+}
+
+/* Text under the images */
+.project__details {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.project__title {
+  display: flex;
+  gap: 16px;
+  width: 341px;
+  max-width: 100%;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.project__label,
+.project__type {
+  color: var(--color-text-muted);
+}
+
+.project__names {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  width: 286px;
+}
+
+.project__name {
+  font-size: var(--font-size-body);
+  font-weight: 600;
+}
+
+.project__summary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-l);
+  width: 316px;
+  max-width: 100%;
+}
+
+/* "See Project →" and "About →" links */
+.text-link {
+  display: flex;
+  gap: 3px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.text-link--large {
+  font-size: var(--font-size-large);
+}
+
+/* --- Numbers section --- */
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+  padding: 0 var(--space-page) var(--space-xl);
+}
+
+.stats__content {
+  display: flex;
+  align-items: flex-start;
+}
+
+.stats__intro {
+  flex-shrink: 0;
+  width: 633px;
+}
+
+.stats__intro-text {
+  max-width: 325px;
+  font-size: var(--font-size-h3);
+  line-height: 1;
+  letter-spacing: var(--tracking-small);
+}
+
+.stats__list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 73px;
+}
+
+.stats__items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  width: 100%;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.stat__number {
+  font-size: var(--font-size-display);
+  letter-spacing: var(--tracking-tight);
+}
+
+.divider {
+  width: 100%;
+  height: 0;
+  margin: 0;
+  border: 0;
+  border-top: 1px solid var(--color-divider);
+}
+
+/* --- "Connect with us" --- */
+.connect {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  padding: 0 var(--space-page);
+}
+
+.connect__text {
+  font-size: var(--font-size-h2);
+  line-height: 1;
+}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 127px;
+  padding: var(--space-l) var(--space-page) var(--space-page);
+  font-size: var(--font-size-large);
+  line-height: 1;
+  letter-spacing: var(--tracking-tight);
+}
+
+.footer__content {
+  display: flex;
+  align-items: flex-start;
+}
+
+.footer__logo {
+  flex: 1;
+  max-width: 625px;
+}
+
+.footer__columns {
+  display: flex;
+  justify-content: space-between;
+  width: 616px;
+}
+
+.footer__column {
+  display: flex;
+  flex-direction: column;
+  gap: 62px;
+  width: 227px;
+}
+
+.footer__column--social {
+  width: 89px;
+}
+
+/* A label (OFFICE, CONTACT, SOCIAL) and the text under it */
+.footer__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+}
+
+.footer__email {
+  text-decoration: underline;
+}
+
+/* Big "Frame & Form" at the bottom: stretches to the full width */
+.footer__wordmark img {
+  width: 100%;
+  height: auto;
+}
+
+/* =========================================================
+   One-screen page ("Coming soon")
+   The page fills the screen height. The two big empty spaces
+   (under "Coming soon" and above the big "Frame & Form")
+   grow or shrink so everything fits on one screen.
+   On a tall screen they come out close to Figma (150px and 127px).
+   ========================================================= */
+.page--one-screen {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100svh; /* newer browsers: the real visible height on phones */
+}
+
+/* Space under "Coming soon": 10px at least, then grows (share: 150) */
+.page--one-screen .main {
+  flex: 150 1 auto;
+}
+
+.page--one-screen .intro {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.page--one-screen .intro__content {
+  flex: 1;
+  padding-bottom: var(--space-s);
+}
+
+/* Space above the big "Frame & Form": 10px at least, then grows (share: 127) */
+.page--one-screen .footer {
+  flex: 127 1 auto;
+  justify-content: space-between;
+  gap: var(--space-s);
+}
+
+/* =========================================================
+   "Coming soon" page (Hebrew, right to left)
+   ========================================================= */
+.page--coming-soon {
+  font-family: var(--font-family-hebrew);
+}
+
+/* Title in the top bar: "ספרינט פורטפוליו תקש״ח 2026" */
+.site-header__title {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: var(--header-height);
+  margin: 0;
+  padding-top: 2px;
+  border-bottom: 1px solid var(--color-divider);
+  font-size: var(--font-size-h4);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: var(--tracking-tight);
+}
+
+.page--coming-soon .intro__content {
+  padding-top: 0;
+}
+
+/* "האתר יעלה בעוד" – centered */
+.coming-soon__title {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: var(--font-size-h1);
+  line-height: 1.1;
+  letter-spacing: var(--tracking-tight);
+}
+
+/* Countdown: 5 numbers with thin lines between them */
+.countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 27px;
+  padding-bottom: 24px;
+}
+
+.countdown__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  width: 120px;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.countdown__number {
+  font-size: var(--font-size-h1);
+  letter-spacing: var(--tracking-tight);
+}
+
+.countdown__label {
+  font-size: var(--font-size-body);
+  letter-spacing: var(--tracking-medium);
+}
+
+.countdown__divider {
+  width: 1px;
+  height: 56px;
+  background: var(--color-divider-light);
+}
+
+/* =========================================================
+   Tablet (up to 1023px wide)
+   ========================================================= */
+@media (max-width: 1023px) {
+  .stats__intro {
+    width: 385px;
+  }
+}
+
+/* =========================================================
+   Phone (up to 767px wide)
+   ========================================================= */
+@media (max-width: 767px) {
+  /* Top bar: show the small logo and the Menu button, hide the links */
+  .site-header__logo-small {
+    display: block;
+  }
+
+  .menu-button {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+    height: var(--header-height);
+    padding: 0 0 var(--space-xs);
+    border: 0;
+    border-bottom: 1px solid var(--color-divider);
+    background: none;
+    color: inherit;
+    font: inherit;
+    font-size: var(--font-size-large);
+    line-height: 1;
+    letter-spacing: var(--tracking-tight);
+    cursor: pointer;
+  }
+
+  /* The links open under the bar, on top of the page, and stay hidden until the menu opens */
+  .site-header__nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-width: none;
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+    padding: var(--space-page);
+    border-bottom: 0;
+    background: var(--color-background);
+  }
+
+  .site-header.is-open .site-header__nav {
+    display: flex;
+  }
+
+  .site-header__nav .nav-link {
+    padding: 0;
+    border: 0;
+  }
+
+  /* Underlined links in the open phone menu (as in Figma) */
+  .site-header__nav .nav-link[aria-current="page"],
+  .site-header__nav .nav-link--underlined {
+    text-decoration: underline;
+  }
+
+  /* The big logo is not part of the phone design */
+  .hero-logo {
+    display: none;
+  }
+
+  .main {
+    gap: var(--space-page);
+  }
+
+  .intro {
+    padding-top: 34px; /* 34px + the 46px bar = 80px from the top, like in Figma */
+  }
+
+  .work {
+    padding-bottom: 40px;
+  }
+
+  .work__title {
+    padding-bottom: 0;
+  }
+
+  .project__images img {
+    width: 285.25px;
+    height: 275.82px;
+  }
+
+  .project__details {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .stats__content {
+    flex-direction: column;
+  }
+
+  .stats__intro {
+    width: 100%;
+    padding-bottom: 80px;
+  }
+
+  .stats__intro-text {
+    max-width: none;
+  }
+
+  .footer__content {
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .footer__columns {
+    flex-direction: column;
+    gap: 62px;
+    width: 100%;
+  }
+
+  .footer__column {
+    width: 100%;
+  }
+
+  /* Countdown: smaller numbers so all 5 fit across a phone screen */
+  .countdown {
+    gap: 6px;
+  }
+
+  .countdown__item {
+    flex: 1;
+    width: auto;
+  }
+
+  .countdown__number {
+    font-size: 40px;
+  }
+}
