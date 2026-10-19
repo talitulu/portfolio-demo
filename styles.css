@@ -423,43 +423,6 @@ a {
 }
 
 /* =========================================================
-   One-screen page ("Coming soon")
-   The page fills the screen height. The two big empty spaces
-   (under "Coming soon" and above the big "Frame & Form")
-   grow or shrink so everything fits on one screen.
-   On a tall screen they come out close to Figma (150px and 127px).
-   ========================================================= */
-.page--one-screen {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  min-height: 100svh; /* newer browsers: the real visible height on phones */
-}
-
-/* Space under "Coming soon": 10px at least, then grows (share: 150) */
-.page--one-screen .main {
-  flex: 150 1 auto;
-}
-
-.page--one-screen .intro {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.page--one-screen .intro__content {
-  flex: 1;
-  padding-bottom: var(--space-s);
-}
-
-/* Space above the big "Frame & Form": 10px at least, then grows (share: 127) */
-.page--one-screen .footer {
-  flex: 127 1 auto;
-  justify-content: space-between;
-  gap: var(--space-s);
-}
-
-/* =========================================================
    "Coming soon" page (Hebrew, right to left)
    ========================================================= */
 .page--coming-soon {
@@ -481,8 +444,9 @@ a {
   letter-spacing: var(--tracking-tight);
 }
 
+/* 7px between the countdown and the line under it, like in Figma */
 .page--coming-soon .intro__content {
-  padding-top: 0;
+  padding: 0 0 7px;
 }
 
 /* "האתר יעלה בעוד" – centered */
