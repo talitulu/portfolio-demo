@@ -74,6 +74,13 @@ a {
   text-decoration: none;
 }
 
+/* Holds invisible SVG filters (like the water ripple) without taking up space */
+.svg-filters {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
 /* Wraps the whole page and keeps it centered on very wide screens */
 .page {
   position: relative;

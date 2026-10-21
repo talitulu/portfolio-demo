@@ -11,8 +11,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=David+Libre:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- "?v=3" makes the browser load the newest version instead of an old saved copy -->
-  <link rel="stylesheet" href="styles.css?v=3">
+  <!-- "?v=4" makes the browser load the newest version instead of an old saved copy -->
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
   <div class="page page--coming-soon">
@@ -69,6 +69,18 @@
 
   </div>
 
+  <!-- Invisible SVG filter: ripple.js uses it to bend the page like water -->
+  <!-- color-interpolation-filters="sRGB" makes the color 128 mean "don't move" -->
+  <svg class="svg-filters" aria-hidden="true">
+    <filter id="water-ripple" x="0" y="0" width="1" height="1" color-interpolation-filters="sRGB">
+      <feImage id="ripple-map" x="0" y="0" width="1" height="1" preserveAspectRatio="none" result="ripples"/>
+      <!-- A little blur makes the waves smooth instead of jagged -->
+      <feGaussianBlur in="ripples" stdDeviation="3" result="smooth-ripples"/>
+      <feDisplacementMap in="SourceGraphic" in2="smooth-ripples" scale="30" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </svg>
+
   <script src="countdown.js"></script>
+  <script src="ripple.js"></script>
 </body>
 </html>
